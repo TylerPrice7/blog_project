@@ -17,8 +17,10 @@
         <!-- Card header with timestamp and edit link -->
         <h4 class="card-header">
           {{ post.date_created|date:'M d, Y H:i' }}
-          <small><a href="{% url 'blogs:edit_post' post.id %}">
-            edit post</a></small>
+          {% if blog.owner == request.user %}
+            <small><a href="{% url 'blogs:edit_post' post.id %}">
+              edit post</a></small>
+          {% endif %}
         </h4>
         <!-- Card body with entry text -->
         <div class="card-body">{{ post.text|linebreaks }}</div>

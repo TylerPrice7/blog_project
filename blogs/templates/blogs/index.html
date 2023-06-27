@@ -1,0 +1,17 @@
+{% extends "blogs/base.html" %}
+
+{% block page_header %}
+  <div class="p-3 mb-4 bg-light border rounded-3">
+    <div class="container-fluid py-4">
+      <h1 class="display-3">Create a blog for anything.</h1>
+
+      <p class="lead">Start your own blog, and add whatever is on your mind.
+      Whether you're hiking the Grand Canyon, making yourself a
+      matchbox car raceway, or digging up some old family albums,
+      we want to hear it. </p>
+      
+      <a class="btn btn-primary btn-lg mt-1"
+        href="{% url 'accounts:register' %}">Register &raquo;</a>
+    </div>
+  </div>
+{% endblock page_header %}
